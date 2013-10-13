@@ -67,6 +67,12 @@ Vagrant.configure("2") do |config|
   #
   # View the documentation for the provider you're using for more
   # information on available options.
+  
+  config.vm.provider :virtualbox do |vb|
+  vb.name = hostname
+  vb.customize ["modifyvm", :id, "--memory", "512"]
+  end
+
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
@@ -92,7 +98,7 @@ Vagrant.configure("2") do |config|
 
   options = {
     options: puppet_args,
-    facter:  { fqdn: 'precise.vagrant' }
+    facter:  { fqdn: hostname }
   }
 
   config.vm.provision :puppet, options do |puppet|
