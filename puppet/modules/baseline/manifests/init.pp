@@ -7,12 +7,10 @@ class baseline {
   $packages = [
     'aptitude',
     'curl',
-    'emacs',
     'gawk',
-    'mercurial',
     'vim',
-    'zsh',
-    'tmux',
+    'mc',
+    'mutt',
   ]
 
   package {

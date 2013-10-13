@@ -2,6 +2,7 @@ node default {
 
   import 'custom/**.pp'
   include baseline
+  include baseline::dotfiles
 
   if $hostname =~ /\bjava\b/ {
     include java7
